@@ -58,7 +58,7 @@ class InitializePage {
 
     movieValidation(json){
 
-        if (json.Response == 'False' || json.Type == 'episode' || json.Genre == 'Adult') {
+        if (json.Response == 'False' || json.Genre == 'Adult') {
             this.loadInfoRandomMovies();
         } else {
             this.showMoviesInitPage(json);
@@ -143,9 +143,6 @@ class InitializePage {
         this.loadInfoRandomMovies();
         this.loadInfoRandomMovies();
         this.loadInfoRandomMovies();
-        this.loadInfoRandomMovies();
-        this.loadInfoRandomMovies();
-        this.loadInfoRandomMovies();
 
     }
 
@@ -157,6 +154,7 @@ class InitializePage {
             const search = ev.target.search.value;
 
             this.targetMovie = search;
+            window.scrollTo(0, 0);
 
             if (search == '') {
                 alert('Fill in the field, please.')
@@ -210,7 +208,7 @@ class InitializePage {
                         <img class="bd-placeholder-img rounded-circle" width="200" height="200" src=${this.imgDefaultMoviePoster} role="img" preserveAspectRatio="xMidYMid slice" focusable="false" alt="img movie poster">
                         <h3 class="fw-normal">${element.Title}</h3>
                         <i class="fa-solid fa-calendar-days fa-2xl"></i><p>${element.Year}</p>
-                        <i class="fa-solid fa-film fa-2xl"></i><p>${element.Type}</p>
+                        <i class="fa-solid fa-film fa-2xl"></i><p>${element.Type}</p>        
                     </div>
                 `;
         
